@@ -1,6 +1,6 @@
 services:
   iperf:
-    image: mlabbe/iperf3
+    image: mlabbe/iperf3:3.17.1-r0
     restart: unless-stopped
     ports:
       - 127.0.0.1:5201:5201
