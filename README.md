@@ -1,5 +1,12 @@
 # lab
 
+## forgejo.yml
+
+### Instructions
+- `127.0.0.1:8002` -> use default settings + create admin user
+- Generate Forgejo/Gitea token (scopes: `repository` (read/write), `user` (read)) -> `GITEA_TOKEN`
+- Generate GitHub token (scopes: `Contents` (read-only), `Metadata` (read-only)) -> `GITHUB_TOKEN`
+
 ## iperf.yml
 
 ```bash

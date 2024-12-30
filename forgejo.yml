@@ -1,0 +1,22 @@
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:9.0.3
+    restart: unless-stopped
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    volumes:
+      - ./volumes/forgejo:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 127.0.0.1:8002:3000
+  mirror-to-gitea:
+    image: jaedle/mirror-to-gitea:latest
+    restart: unless-stopped
+    environment:
+      - GITHUB_USERNAME=${GITHUB_USERNAME:?Variable is not set or empty}
+      - GITEA_URL=http://forgejo:3000
+      - GITEA_TOKEN=${GITEA_TOKEN:?Variable is not set or empty}
+      - GITHUB_TOKEN=${GITHUB_TOKEN:?Variable is not set or empty}
+      - MIRROR_PRIVATE_REPOSITORIES=true
