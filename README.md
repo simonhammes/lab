@@ -13,6 +13,9 @@ iperf3 -c 127.0.0.1
 # Source: https://stackoverflow.com/questions/50009065/how-to-persist-data-in-prometheus-running-in-a-docker-container#comment116094474_50009322
 mkdir -p volumes/prometheus
 sudo chown 65534:65534 volumes/prometheus
+
+mkdir -p volumes/grafana
+sudo chown 472:0 volumes/grafana
 ```
 
 ### Dashboards
