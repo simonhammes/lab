@@ -6,6 +6,8 @@ services:
     depends_on:
       - prometheus
     restart: unless-stopped
+    command:
+      - cfg:default.log.level=warn
     volumes:
       - ./volumes/grafana:/var/lib/grafana
   prometheus:
