@@ -13,6 +13,8 @@ services:
     restart: unless-stopped
     command:
       - --config.file=/etc/prometheus/prometheus.yml
+      # TODO: https://github.com/prometheus/common/issues/522
+      - --log.level=warn
     volumes:
       - ./prometheus:/etc/prometheus
       - ./volumes/prometheus:/prometheus
