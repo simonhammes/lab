@@ -21,5 +21,7 @@ services:
     restart: unless-stopped
     command:
       - --path.rootfs=/host
+      # TODO: https://github.com/prometheus/common/issues/522
+      - --log.level=warn
     volumes:
       - /:/host:ro,rslave
