@@ -29,3 +29,13 @@ services:
       - --log.level=warn
     volumes:
       - /:/host:ro,rslave
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.49.2
+    privileged: true
+    #command:
+    #  - --disable_metrics=disk,referenced_memory
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
