@@ -33,6 +33,9 @@ services:
     image: gcr.io/cadvisor/cadvisor:v0.49.2
     privileged: true
     command:
+      # TODO:
+      # https://github.com/google/cadvisor/issues/3357
+      # https://github.com/google/cadvisor/issues/3139
       - --disable_metrics=disk,referenced_memory
     volumes:
       - /:/rootfs:ro
