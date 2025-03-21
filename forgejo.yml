@@ -1,6 +1,6 @@
 services:
   forgejo:
-    image: codeberg.org/forgejo/forgejo:10.0.1
+    image: codeberg.org/forgejo/forgejo:10.0.2
     restart: unless-stopped
     environment:
       - USER_UID=1000
