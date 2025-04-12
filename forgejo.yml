@@ -14,7 +14,7 @@ services:
     ports:
       - 127.0.0.1:8002:3000
   mirror-to-gitea:
-    image: jaedle/mirror-to-gitea@sha256:3094cb9a498960079ed8c76a0cdf48af7b712e6f090fe901fa10609d6463e93c
+    image: jaedle/mirror-to-gitea@sha256:764ba58a7417f113835db922b897a30991c6cd63502845c4524e65183a7199b7
     restart: unless-stopped
     environment:
       - GITHUB_USERNAME=${GITHUB_USERNAME:?Variable is not set or empty}
