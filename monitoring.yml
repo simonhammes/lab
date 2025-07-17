@@ -17,6 +17,8 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
       # TODO: https://github.com/prometheus/common/issues/522
       - --log.level=warn
+    ports:
+      - 127.0.0.1:3001:9090
     volumes:
       - ./prometheus:/etc/prometheus
       - ./volumes/prometheus:/prometheus
